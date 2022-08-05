@@ -1,7 +1,7 @@
 ---
 title: "論文要約: XLM-RoBERTa - 100言語、2.5TBのデータで学習した多言語モデル"
 emoji: "🌊"
-type: "tech"
+type: "idea"
 topics:
   - "論文要約"
   - "言語モデル"

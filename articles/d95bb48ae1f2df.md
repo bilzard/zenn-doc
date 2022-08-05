@@ -1,7 +1,7 @@
 ---
 title: "論文要約: DAIL - 顔認識タスクにおける複数データセットを使った学習手法"
 emoji: "👌"
-type: "tech"
+type: "idea"
 topics:
   - "顔認識"
   - "論文要約"
