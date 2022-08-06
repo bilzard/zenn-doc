@@ -89,6 +89,6 @@ $$y=\tanh(W_{k, f} * x + V^T_{k, f} * s) \odot \sigma(W_{k, g} * x + V^T_{k, g} 
 
 # 所感
 
-* WaveNetにおける条件付き生成の仕組みは本論文の成果をほぼそのまま利用している
-* Gated activationの設計意図が理解できた（LSTMのゲートを模倣したもの）
+* WaveNetやその後継モデル(WaveGlow, WaveFlow)では条件付き生成の仕組みに本論文の手法を採用している
+* Gated activationの設計意図が理解できた
 * 他の論文（WaveGlow, WaveFlowなど）では自己回帰に特に拘らずに未来のピクセルも参照しているが、本論文では（おそらくPixelCNN, PicelRNNも）注意深く参照しないようにしている。自己回帰を忠実に守ることのメリットには何があるのだろうか？
