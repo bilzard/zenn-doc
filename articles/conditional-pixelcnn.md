@@ -2,7 +2,7 @@
 title: "論文メモ: Conditional PixelCNN - PixelCNNベースの条件付き画像生成モデル"
 emoji: "🌆"
 type: "idea" # tech: 技術記事 / idea: アイデア
-topics: ["論文メモ", "自己回帰モデル", "生成モデル"]
+topics: ["論文メモ", "自己回帰モデル", "生成モデル", "機械学習"]
 published: true
 ---
 

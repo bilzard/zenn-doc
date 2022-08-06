@@ -5,6 +5,7 @@ type: "idea"
 topics:
   - "論文要約"
   - "言語モデル"
+  - "機械学習"
 published: true
 published_at: "2022-05-31 20:17"
 ---

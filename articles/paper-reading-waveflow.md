@@ -2,7 +2,7 @@
 title: "論文メモ: WaveFlow - 2次元畳み込みによる軽量なFlowベースの会話生成モデル"
 emoji: "🌊"
 type: "idea" # tech: 技術記事 / idea: アイデア
-topics: ["論文メモ", "会話生成モデル"]
+topics: ["論文メモ", "会話生成モデル", "機械学習"]
 published: true
 ---
 
