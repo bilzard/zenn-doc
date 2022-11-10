@@ -3,7 +3,7 @@ title: "論文読解: GRU4Recの改良 - 負例のサンプリングと損失関
 emoji: "🐥"
 type: "idea" # tech: 技術記事 / idea: アイデア
 topics: [論文読解]
-published: false
+published: true
 ---
 # 論文
 
