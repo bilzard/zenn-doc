@@ -3,7 +3,8 @@ title: "今までにKaggleコンペで使ったLB Probing手法について"
 emoji: "🐈"
 type: "idea" # tech: 技術記事 / idea: アイデア
 topics: ["Kaggle"]
-published: false
+published: true
+published_at: 2022-12-03 07:00
 ---
 ## 概要
 
