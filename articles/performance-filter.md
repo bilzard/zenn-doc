@@ -3,7 +3,7 @@ title: "各種filter演算の速度比較"
 emoji: "👋"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["パフォーマンス計測", "python", "numpy", "pandas"]
-published: true
+published: false
 ---
 # listとnumpy arrayでfilter演算の速度を比較する
 
