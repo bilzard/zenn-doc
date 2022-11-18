@@ -3,7 +3,8 @@ title: "%timeitの測定結果を処理する"
 emoji: "👋"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["パフォーマンス計測", "python", "numpy", "pandas"]
-published: false
+published: true
+published_at: 2022-11-19 09:00
 ---
 # 概要
 
