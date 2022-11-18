@@ -91,8 +91,7 @@ for name, result in sim_result.items():
     data.append(
         {
             "name": name,
-            "mean": result.average,
-            "std": result.stdev,
+            "min": result.best,
             "loops": result.loops,
             "repeat": result.repeat,
         }
@@ -101,14 +100,13 @@ data = pd.DataFrame(data)
 data
 ```
 
-|        name |     mean |          std | loops | repeat |
-| ----------: | -------: | -----------: | ----: | -----: |
-|      filter | 0.004671 | 1.955384e-05 |   100 |      7 |
-| tuple comp. | 0.003846 | 1.717085e-05 |   100 |      7 |
-|  list comp. | 0.003649 | 1.697157e-05 |   100 |      7 |
-|       numpy | 0.000331 | 1.724407e-07 |  1000 |      7 |
-|      pandas | 0.000600 | 4.628435e-07 |  1000 |      7 |
-
+|        name |      min | loops | repeat |
+| ----------: | -------: | ----: | -----: |
+|      filter | 0.004643 |   100 |      7 |
+| tuple comp. | 0.003821 |   100 |      7 |
+|  list comp. | 0.003619 |   100 |      7 |
+|       numpy | 0.000331 |  1000 |      7 |
+|      pandas | 0.000599 |  1000 |      7 |
 
 ```python
 _, ax = plt.subplots(figsize=(8, 3))
@@ -120,3 +118,13 @@ plt.show()
 ![result](/images/simulate_filter_output.png)
 
 という感じでいい感じにグラフにすることができた。
+
+### 平均 v.s. 最小値
+
+なお、上記結果平均値ではなく最小値を使ってグラフを描いている。平均値や分散も取れるが、`timeit.Timer.repeat`のドキュメント[^4]によると、
+
+> 注釈 結果のベクトルから平均値や標準偏差を計算して出力させたいと思うかもしれませんが、**それはあまり意味がありません**。多くの場合、最も低い値がそのマシンが与えられたコード断片を実行する場合の下限値です。結果のうち高めの値は、Python のスピードが一定しないために生じたものではなく、その他の計測精度に影響を及ぼすプロセスによるものです。したがって、**結果のうち min() だけが見るべき値となるでしょう**。この点を押さえた上で、統計的な分析よりも常識的な判断で結果を見るようにしてください。
+
+とある。つまり最小値から超過した分は外乱が原因であることがほとんどなので最小値以外は見る必要がないとのこと。したがって最小値のみをプロットするようにした。
+
+[^4]: https://docs.python.org/ja/3/library/timeit.html#timeit.Timer.repeat
