@@ -8,7 +8,7 @@ published_at: 2022-11-19 09:00
 ---
 # 概要
 
-ipython notebookで`%timeit`の測定結果を分析する際、結果をpythonの変数から参照したくなる。ドキュメント[^1]によれば、`-o`オプションをつけると取得できる。
+ipython notebookで`%timeit`の測定結果を分析する際、結果をpythonの変数から参照したくなる。ドキュメント[^1]によれば、`-o`オプションをつけると取得できる。この記事では結果の処理方法を計測例とともに説明する。
 
 [^1]: https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit
 
