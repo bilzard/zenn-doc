@@ -1,5 +1,5 @@
 ---
-title: "%timeitの測定結果をpythonで取得する"
+title: "%timeitの測定結果を処理する"
 emoji: "👋"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["パフォーマンス計測", "python", "numpy", "pandas"]
@@ -7,14 +7,17 @@ published: false
 ---
 # 概要
 
-`%timeit`の測定結果を分析する際、結果をpythonの変数から参照したくなる。
-ドキュメント[^1]によれば、`-o`オプションをつけると取得できる。
+ipython notebookで`%timeit`の測定結果を分析する際、結果をpythonの変数から参照したくなる。ドキュメント[^1]によれば、`-o`オプションをつけると取得できる。
 
 [^1]: https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit
 
 # `TimeitResult` オブジェクトの構造
 
-ドキュメント[^2]によると、
+```python
+result = %timeit -o [i ** 2 for i in range(10_000)]
+```
+
+`result`は`TimeitResult`クラスのオブジェクト[^2]。ドキュメントによると、以下のような属性を持つ[^3]。
 
 * loops: 1回の計測における対象の処理の反復回数
 * repeat: 計測回数
@@ -27,10 +30,11 @@ published: false
 
 注意すべきなのは、`all_runs`の結果は`loop`回の合計値であること。`all_runs`の結果から1回あたりの処理時間を計算するには、`loop`回数で割る必要がある。
 
-[^2]: `IPython.core.magics.execution.TimeitResult`をインポートして`help()`関数を実行すればわかる。
-# 計測例 - filter処理の速度比較
+[^2]: `IPython.core.magics.execution.TimeitResult`をインポートして`help()`にかければわかる。もっと簡単には、`result`オブジェクトを`help()`にかければわかる。
+[^3]: 変数の意味はともかく何が格納されているかを知りたければ`vars(result)`で属性を列挙すればわかる。
+# 計測例
 
-実際に計測してみる。以下の5通りの書き方で速度比較する。
+実際に計測してみる。以下の5通りの書き方でfilter処理の速度を比較する。
 
 1. `result[:] = filter(<filter_func>, xs)`
 2. `result[:] = (x for x in xs if <filter_cond>)`
@@ -79,14 +83,6 @@ sim_result["numpy"] = %timeit -o result = xs[xs > 128]
 xs = pd.DataFrame(np.random.randint(0, 256, N))
 sim_result["pandas"] = %timeit -o result = xs[xs > 128]
 ```
-
-    4.67 ms ± 19.6 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
-    3.85 ms ± 17.2 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
-    3.65 ms ± 17 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
-    331 µs ± 172 ns per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
-    600 µs ± 463 ns per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
-
-
 
 ```python
 data = []
