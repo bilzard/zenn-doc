@@ -27,3 +27,13 @@ $$\rho(f_i) = \frac{e^{f_i}}{\sum_{j=1}^m e^{f_j}}, \phi(y_i) = \frac{e^{y_i}}{\
 
 XE_NDCG:
 $$\rho(f_i) = \frac{e^{f_i}}{\sum_{j=1}^m e^{f_j}}, \phi(y_i; \bm{\gamma}) = \frac{2^{y_i} - \gamma_i}{\sum_ {j=1}^m 2^{y_j} - \gamma_j}$$
+
+## その他周辺的な情報
+
+* LightGBMが`rank_xendcg`として公式にサポートしている[^2]。
+* 著者による解説動画[^3]が公開されている。
+* LightGBMにおける実装のコード[^4]
+
+[^2]: https://lightgbm.readthedocs.io/en/latest/Parameters.html
+[^3]: https://www.youtube.com/watch?v=BjbSuEEBau8
+[^4]: https://github.com/microsoft/LightGBM/blob/master/src/objective/rank_objective.hpp#L285-L363
