@@ -3,7 +3,7 @@ title: "Paper: An Alternative Cross Entropy Loss for Learning-to-Rank"
 emoji: "🔖"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [learningtorank, paper]
-published: false
+published: true
 ---
 
 ## 概要
