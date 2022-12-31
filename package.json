@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/bilzard/zenn-doc#readme",
   "dependencies": {
-    "zenn-cli": "^0.1.116"
+    "zenn-cli": "^0.1.134"
   }
 }
